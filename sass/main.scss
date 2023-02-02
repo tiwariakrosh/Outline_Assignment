@@ -1,10 +1,138 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-h1{
-    background-color: red;
+$body-color: #F2EFEE;
+$blue-color : #003A92;
+$black-color: #3C3C3C;
+$white: #ffffff;
+$secondary-color: #74788A;
+
+body {
+    background-color: $body-color;
+    position: relative;
+}
+
+ul li,
+a {
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+}
+
+header {
+    position: relative;
+    height: 212px;
+}
+
+.nav-top {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    left: 0px;
+    top: 0px;
+}
+
+.navbar {
+    position: absolute;
+    width: calc(100% - 60px);
+    height: 152px;
+    background-color: $white;
+    left: 60px;
+    top: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding: 60px;
+}
+
+.logo {
+    width: 150px;
+    height: 60px;
+    text-transform: uppercase;
+    color: #003A92;
+    font-weight: 700;
+    text-align: center;
+
+    .logo-name {
+        font-size: 1.75rem;
+    }
+
+    span {
+        font-weight: 600;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            right: 60px;
+            top: 10px;
+            height: 2px;
+            width: 20px;
+            background-color: #003A92;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 60px;
+            top: 10px;
+            height: 2px;
+            width: 20px;
+            background-color: #003A92;
+        }
+    }
+
+}
+
+.nav-items {
+    display: flex;
+    gap: 50px;
+
+    li a {
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: capitalize;
+        line-height: 20px;
+        letter-spacing: 2%;
+        color: $black-color;
+        font-family: Inter;
+    }
+}
+
+// Hero Section
+
+.hero {
+    position: relative;
+    background-color: $white;
+    width: calc(100% - 60px);
+    left: 60px;
+    padding: 50px 120px 50px 60px;
+    margin-bottom: 20px;
+
+    .hero-text {
+        p {
+            font-family: 'Galaxie Copernicus';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 64px;
+            line-height: 70px;
+            letter-spacing: -0.02em;
+            color: $blue-color;
+        }
+    }
+
+    figure {
+        position: absolute;
+        width: calc(100% - 120px);
+        left: 120px;
+        right: 0;
+        height: 565px;
+    }
+}
+
+h1 {
+    background-color: $black-color;
     color: #fff;
 }
