@@ -1,14 +1,14 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 $body-color: #F2EFEE;
 $blue-color : #003A92;
 $black-color: #3C3C3C;
 $white: #ffffff;
 $secondary-color: #74788A;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 body {
     background-color: $body-color;
@@ -19,7 +19,10 @@ ul li,
 a {
     text-decoration: none;
     list-style: none;
-    color: inherit;
+}
+
+img {
+    max-width: 100%;
 }
 
 header {
@@ -33,6 +36,21 @@ header {
     height: 60px;
     left: 0px;
     top: 0px;
+
+    .social-icons {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+        padding-right: 120px;
+        height: 100%;
+
+
+        img {
+            filter: brightness(40%);
+            cursor: pointer;
+        }
+    }
 }
 
 .navbar {
@@ -44,14 +62,14 @@ header {
     top: 60px;
     display: flex;
     justify-content: space-between;
-    padding: 60px;
+    padding: 60px 120px 60px 60px;
 }
 
 .logo {
     width: 150px;
     height: 60px;
     text-transform: uppercase;
-    color: #003A92;
+    color: $blue-color;
     font-weight: 700;
     text-align: center;
 
@@ -86,7 +104,7 @@ header {
 
 }
 
-.nav-items {
+.navbar ul {
     display: flex;
     gap: 50px;
 
@@ -101,6 +119,52 @@ header {
     }
 }
 
+.toggle-btn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar.active ul {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 0;
+        color: #fff;
+    }
+
+    .toggle-btn {
+        display: block;
+        position: relative;
+        right: 10px;
+        top: 10px;
+        background-image: url(./image/XS/Icon/Burger.svg);
+        background-color: $blue-color;
+    }
+
+    .navbar.active {
+        background-color: $blue-color;
+    }
+
+    .active .toggle-btn {
+        background-image: url(./image/XS/Nav/Icon/Close@2x.png);
+        color: #333;
+    }
+
+}
+
 // Hero Section
 
 .hero {
@@ -109,9 +173,15 @@ header {
     width: calc(100% - 60px);
     left: 60px;
     padding: 50px 120px 50px 60px;
-    margin-bottom: 20px;
+    margin-bottom: 280px;
+    padding-bottom: 25%;
 
     .hero-text {
+        display: flex;
+        padding: 20px 0 40px 0;
+        align-items: flex-end;
+        justify-content: space-between;
+
         p {
             font-family: 'Galaxie Copernicus';
             font-style: normal;
@@ -120,7 +190,35 @@ header {
             line-height: 70px;
             letter-spacing: -0.02em;
             color: $blue-color;
+            width: 60%;
         }
+
+        .button {
+            width: 20%;
+            border: 1px solid $secondary-color;
+            padding: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+            width: 214px;
+            border-radius: 2px;
+
+            img {
+                border-left: 1px solid $secondary-color;
+                padding: 24px;
+            }
+
+            span {
+                padding: 24px;
+                font-family: 'Inter';
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 18px;
+                color: $black-color;
+            }
+        }
+
     }
 
     figure {
@@ -129,10 +227,254 @@ header {
         left: 120px;
         right: 0;
         height: 565px;
+
+        img {
+            width: 98%;
+            height: 100%;
+        }
     }
 }
 
-h1 {
+
+
+#menu-icon {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: lightgray;
+        height: calc(100% - 60px);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        .navbar a {
+            padding: 20px;
+        }
+
+    }
+
+    #menu-icon {
+        display: block;
+    }
+}
+
+// NEWS
+.news {
+    display: flex;
+    padding: 40px 120px;
+}
+
+.single-news {
+    .card {
+        padding: 40px;
+        margin: 50px 0;
+
+        figcaption {
+            width: 520px;
+            height: 159px;
+            flex-grow: 0;
+            margin: 16px 1px 0 0;
+            font-family: GalaxieCopernicus;
+            font-size: 44px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.2;
+            letter-spacing: -0.88px;
+            text-align: left;
+            color: #3c3c3c;
+        }
+    }
+
+    a {
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: 0.36px;
+        text-align: right;
+        color: #3c3c3c;
+        position: relative;
+
+        &::after {
+            content: '';
+            background-image: url(../image/XL/Hero/XL/Button/Icon/Arrow/Arrow/Right.svg);
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+    }
+
+
+
+}
+
+.grid-news {
+    display: grid;
+    grid-template-columns: repeat(1fr, 2);
+    grid-template-rows: repeat(1fr, 2);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+
+    .card {
+        padding: 40px;
+    }
+
+    .div1 {
+        grid-area: 1 / 1 / 2 / 3;
+
+        figcaption {
+            margin: 16px 53px 0 0;
+            font-family: GalaxieCopernicus;
+            font-size: 32px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.2;
+            letter-spacing: -0.64px;
+            text-align: left;
+            color: #3c3c3c;
+
+            .date {
+                color: $black-color;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .div2 {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .div3 {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+}
+
+// mission section
+
+// beneficiaries section
+.beneficiaries {
+    padding-left: 120px;
+
+    h2 {
+        text-transform: uppercase;
+
+    }
+
+    .card-wrapper {
+        display: flex;
+
+        .card {
+            width: 255px;
+            height: 497px;
+            padding: 30px;
+        }
+
+        &:nth-child(1) {
+            padding-left: 0;
+        }
+    }
+}
+
+// gallery section
+.gallery {
+    padding: 60px 120px;
+
+    .img-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .card {
+            padding: 30px;
+        }
+    }
+}
+
+// footer
+.footer {
     background-color: $black-color;
-    color: #fff;
+    padding: 45px 120px 20px;
+
+    hr {
+        border: 1px solid $secondary-color;
+        outline: none;
+        opacity: .5;
+        margin: 20px 0;
+    }
+
+    .footer-logo {
+        height: 200px;
+    }
+
+    .footer-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+        padding-bottom: 50px;
+
+        ul {
+            display: flex;
+            gap: 60px;
+
+            li a {
+                color: $white;
+                font-family: Inter;
+                font-size: 14px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.4;
+                letter-spacing: 0.28px;
+            }
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 30px;
+        }
+    }
+
+
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $secondary-color;
+        margin-top: 80px;
+        margin-bottom: 10px;
+
+        ul {
+            display: flex;
+            gap: 40px;
+
+            li a {
+                color: $secondary-color;
+                font-weight: 500;
+                font-family: Inter;
+                font-size: 14px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.4;
+                letter-spacing: 0.28px;
+            }
+        }
+    }
 }

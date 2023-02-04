@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        header {
+            background-color: #fff;
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        #navbar ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #navbar a {
+            color: rgb(50, 50, 50);
+            text-decoration: none;
+            padding: 1rem;
+            display: block;
+        }
+
+        .toggle-btn {
+            display: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            #navbar ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #333;
+                width: 100%;
+                text-align: center;
+            }
+
+            #navbar.active ul {
+                display: block;
+            }
+
+            #navbar a {
+                display: block;
+                margin: 0;
+                color: #fff;
+            }
+
+            .toggle-btn {
+                display: block;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+
+
+            }
+
+            .toggle-btn {
+                background-image: url(./image/XS/Icon/Burger.svg);
+            }
+
+            #navbar.active {
+                background-color: blue;
+            }
+
+            .active .toggle-btn {
+                background-image: url(./image/XS/Nav/Icon/Close@2x.png);
+                color: #333;
+            }
+
+        }
+    </style>
+    <header>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#" class="toggle-btn">
+            </a>
+        </nav>
+    </header>
+
+    <script>
+        const toggleBtn = document.querySelector(".toggle-btn");
+        const navbar = document.querySelector("#navbar");
+
+        toggleBtn.addEventListener("click", function () {
+            navbar.classList.toggle("active");
+        });
+    </script>
+</body>
+
+</html>
