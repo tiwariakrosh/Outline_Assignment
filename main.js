@@ -27,7 +27,7 @@ $('.dropdown').click(function () {
 });
 
 
-$(".dropdown").mouseleave(function () {
-    $('.drop-content').fadeOut('fast');
-    $('.dropdown-link').removeClass('active');
-});
+// $(".dropdown").mouseleave(function () {
+//     $('.drop-content').fadeOut('fast');
+//     $('.dropdown-link').removeClass('active');
+// });

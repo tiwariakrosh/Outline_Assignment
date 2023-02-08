@@ -32,6 +32,103 @@ img {
   max-width: 100%;
 }
 
+h1 {
+  font-family: 'GalaxieCopernicus', sans-serif;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #003a92;
+  width: 70%;
+}
+
+h2 {
+  font-family: 'GalaxieCopernicus', sans-serif;
+  font-size: 44px;
+  line-height: 1.2;
+  letter-spacing: -0.88px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-family: 'GalaxieCopernicus', sans-serif;
+  letter-spacing: -0.64px;
+  font-weight: 500;
+}
+
+h5 {
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: 5%;
+  font-size: 24px;
+  color: #003a92;
+}
+
+h6 {
+  color: #74788a;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+.p1 {
+  font-family: 'GalaxieCopernicus', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  font-weight: normal;
+}
+
+.p2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0.28px;
+  color: #74788a;
+  font-weight: 500;
+}
+
+.b1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -2%;
+  color: #3c3c3c;
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 32px;
+    line-height: 1.1;
+    letter-spacing: -2%;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 14px;
+  }
+  h6 {
+    font-size: 10px;
+  }
+  .p1 {
+    font-size: 14px;
+  }
+  .p2 {
+    font-size: 12px;
+  }
+  .b1 {
+    font-size: 14px;
+  }
+}
+
 header {
   position: relative;
 }
@@ -109,25 +206,38 @@ header .navbar .nav-items li {
 }
 
 header .navbar .nav-items li a {
-  font-size: 14px;
-  font-weight: 400;
   text-transform: capitalize;
-  line-height: 20px;
-  letter-spacing: 2%;
-  color: #3c3c3c;
-  font-family: 'Inter', sans-serif;
+  font-weight: 400;
 }
 
-header .navbar .nav-items li ul {
+header .navbar .nav-items li .drop-content {
   position: absolute;
   width: 100%;
-  top: 120px;
+  top: 115px;
   background-color: #ffffff;
   padding: 32px;
   left: 0;
-  z-index: 6;
+  z-index: 4;
   display: none;
   padding-left: auto;
+  border-top: 1px solid #00000035;
+}
+
+header .navbar .nav-items li .drop-content a {
+  font-size: 32px;
+  letter-spacing: -2%;
+  font-weight: 500;
+  color: #003a92;
+  line-height: 1.2;
+  max-width: 380px;
+}
+
+header .navbar .nav-items li .founder-content {
+  padding-left: 45%;
+}
+
+header .navbar .nav-items li .scholar-content {
+  padding-left: 65%;
 }
 
 header .navbar.sticky {
@@ -143,7 +253,7 @@ header .toggle-btn {
   display: none;
 }
 
-@media (min-width: 1680px) {
+@media only screen and (min-width: 1680px) {
   header .nav-top .social-icons {
     padding-right: 240px;
   }
@@ -158,7 +268,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 1680px) {
+@media only screen and (max-width: 1680px) {
   header .nav-top .social-icons {
     padding-right: 120px;
   }
@@ -173,7 +283,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
   header .nav-top .social-icons {
     padding-right: 88px;
   }
@@ -191,7 +301,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 992px) {
+@media only screen and (max-width: 992px) {
   header .nav-top .social-icons {
     padding-right: 64px;
   }
@@ -213,7 +323,7 @@ header .toggle-btn {
   header .navbar .nav-items li {
     padding: 0;
   }
-  header .navbar .nav-items li ul {
+  header .navbar .nav-items li .drop-content {
     background-color: transparent;
     position: relative;
     top: -10px;
@@ -281,7 +391,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 786px) {
+@media only screen and (max-width: 786px) {
   header .nav-top .social-icons {
     padding-right: 48px;
   }
@@ -303,7 +413,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 576px) {
+@media only screen and (max-width: 576px) {
   header .nav-top {
     height: 56px;
   }
@@ -356,16 +466,6 @@ header .toggle-btn {
   padding: 20px 0 40px 0;
 }
 
-.hero .hero-text h1 {
-  font-family: 'GalaxieCopernicus', sans-serif;
-  font-weight: 500;
-  font-size: 64px;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: #003a92;
-  width: 70%;
-}
-
 .hero .hero-text .button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -383,20 +483,16 @@ header .toggle-btn {
   width: 214px;
   border-radius: 2px;
   margin-bottom: 24px;
+  text-align: center;
+}
+
+.hero .hero-text .button span {
+  padding: 0 20px;
 }
 
 .hero .hero-text .button img {
   border-left: 1px solid #74788a;
   padding: 24px;
-}
-
-.hero .hero-text .button span {
-  padding: 24px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-  line-height: 18px;
-  color: #3c3c3c;
 }
 
 .hero figure {
@@ -412,7 +508,7 @@ header .toggle-btn {
   height: 100%;
 }
 
-@media (min-width: 1680px) {
+@media only screen and (min-width: 1680px) {
   .hero {
     width: calc(100% - 120px);
     left: 120px;
@@ -425,7 +521,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 1680px) {
+@media only screen and (max-width: 1680px) {
   .hero {
     width: calc(100% - 60px);
     left: 60px;
@@ -438,7 +534,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
   .hero {
     width: calc(100% - 44px);
     left: 44px;
@@ -451,7 +547,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 992px) {
+@media only screen and (max-width: 992px) {
   .hero {
     width: calc(100% - 32px);
     left: 32px;
@@ -468,7 +564,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 786px) {
+@media only screen and (max-width: 786px) {
   .hero {
     width: calc(100% - 24px);
     left: 24px;
@@ -494,7 +590,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 576px) {
+@media only screen and (max-width: 576px) {
   .hero {
     width: calc(100% - 16px);
     left: 16px;
@@ -504,23 +600,15 @@ header .toggle-btn {
   .hero .hero-text {
     gap: 20px;
   }
-  .hero .hero-text h1 {
-    font-size: 32px;
-    line-height: 1.1;
-    letter-spacing: -2%;
-  }
   .hero .hero-text .button {
-    width: 140px;
+    width: 141px;
     height: 40px;
   }
   .hero .hero-text .button span {
-    font-size: 14px;
-    line-height: 1;
-    letter-spacing: 0.28px;
-    padding: 10px;
+    padding: 11px;
   }
   .hero .hero-text .button img {
-    padding: 12px;
+    padding: 11px;
   }
   .hero figure {
     width: calc(100% - 16px);
@@ -540,19 +628,14 @@ header .toggle-btn {
   padding: 60px 120px;
 }
 
-.news h2 {
-  font-size: 24px;
-  color: #003a92;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  letter-spacing: 1.2px;
-  line-height: 24px;
-}
-
 .news .news-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.news .news-container h2 {
+  color: #3c3c3c;
 }
 
 .news .news-container img {
@@ -570,12 +653,6 @@ header .toggle-btn {
       -ms-flex-positive: 0;
           flex-grow: 0;
   margin: 16px 1px 0 0;
-  font-family: GalaxieCopernicus;
-  font-size: 44px;
-  line-height: 1.2;
-  letter-spacing: -0.88px;
-  text-align: left;
-  color: #3c3c3c;
 }
 
 .news .date {
@@ -584,11 +661,6 @@ header .toggle-btn {
   display: flex;
   gap: 40px;
   margin: 14px 0;
-  color: #74788a;
-  font-family: Inter;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.7px;
 }
 
 .news .grid-news {
@@ -605,24 +677,12 @@ header .toggle-btn {
   border: 1px solid #ffffff;
 }
 
-.news .grid-news .card figcaption {
-  font-family: GalaxieCopernicus;
-  letter-spacing: -0.64px;
-  text-align: left;
-  color: #3c3c3c;
-}
-
 .news .grid-news .div1 {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: 1 / 1 / 2 / 3;
-}
-
-.news .grid-news .div1 figcaption {
-  font-size: 32px;
-  line-height: 1.2;
 }
 
 .news .grid-news .div2 {
@@ -633,22 +693,12 @@ header .toggle-btn {
   grid-area: 2 / 1 / 3 / 2;
 }
 
-.news .grid-news .div2 figcaption {
-  font-size: 1.1rem;
-  line-height: 1.4;
-}
-
 .news .grid-news .div3 {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-area: 2 / 2 / 3 / 3;
-}
-
-.news .grid-news .div3 figcaption {
-  font-size: 1.1rem;
-  line-height: 1.4;
 }
 
 .news .view-more {
@@ -664,33 +714,25 @@ header .toggle-btn {
   margin-top: 20px;
 }
 
-.news .view-more a {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.36px;
-  color: #3c3c3c;
-}
-
 .news .view-more img {
   margin-top: 4px;
 }
 
-@media (min-width: 1680px) {
+@media only screen and (min-width: 1680px) {
   .news {
     padding-right: 240px;
     padding-left: 240px;
   }
 }
 
-@media (max-width: 1680px) {
+@media only screen and (max-width: 1680px) {
   .news {
     padding-right: 120px;
     padding-left: 120px;
   }
 }
 
-@media (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
   .news {
     padding-right: 88px;
     padding-left: 88px;
@@ -700,7 +742,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 992px) {
+@media only screen and (max-width: 992px) {
   .news {
     padding-right: 64px;
     padding-left: 64px;
@@ -713,14 +755,14 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 786px) {
+@media only screen and (max-width: 786px) {
   .news {
     padding-right: 48px;
     padding-left: 48px;
   }
 }
 
-@media (max-width: 576px) {
+@media only screen and (max-width: 576px) {
   .news {
     padding: 16px 0 16px 32px;
     -webkit-box-orient: vertical;
@@ -770,33 +812,22 @@ header .toggle-btn {
   margin-bottom: 280px;
 }
 
+.mission h5 {
+  color: #ffffff;
+}
+
 .mission .mission-text {
   background-color: #8c2531;
   padding: 60px 120px 26% 120px;
   color: #ffffff;
-  font-family: 'GalaxieCopernicus', sans-serif;
-  line-height: 1.2;
-  letter-spacing: -0.88px;
-}
-
-.mission .mission-text span {
-  text-transform: uppercase;
-  font-family: 'Inter', sans-serif;
-  line-height: 1;
-  font-weight: 600;
-  letter-spacing: 1.2px;
-  font-size: 24px;
 }
 
 .mission .mission-text h2 {
   max-width: 780px;
   margin: 32px 0 20px;
-  font-size: 44px;
 }
 
 .mission .mission-text p {
-  line-height: 1.4;
-  font-size: 1.1rem;
   max-width: 780px;
   opacity: .8;
 }
@@ -814,7 +845,7 @@ header .toggle-btn {
   width: 100%;
 }
 
-@media (min-width: 1680px) {
+@media only screen and (min-width: 1680px) {
   .mission {
     padding-right: 120px;
   }
@@ -828,7 +859,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 1680px) {
+@media only screen and (max-width: 1680px) {
   .mission {
     padding-right: 60px;
   }
@@ -841,7 +872,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
   .mission {
     padding-right: 44px;
   }
@@ -858,7 +889,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 992px) {
+@media only screen and (max-width: 992px) {
   .mission {
     padding-right: 32px;
     margin-bottom: 240px;
@@ -877,7 +908,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 786px) {
+@media only screen and (max-width: 786px) {
   .mission {
     padding-right: 24px;
     margin-bottom: 200px;
@@ -892,7 +923,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 576px) {
+@media only screen and (max-width: 576px) {
   .mission {
     padding: 16px 16px 16px 0;
     position: relative;
@@ -927,16 +958,6 @@ header .toggle-btn {
   background-color: #ffffff;
 }
 
-.beneficiaries h2 {
-  text-transform: uppercase;
-  font-family: Inter, sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  color: #003a92;
-  margin-bottom: 30px;
-}
-
 .beneficiaries .card-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -944,6 +965,14 @@ header .toggle-btn {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: scroll hidden;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-top: 30px;
 }
 
 .beneficiaries .card-wrapper .card {
@@ -985,54 +1014,46 @@ header .toggle-btn {
 
 .beneficiaries .card-wrapper .card figcaption {
   margin: 20px 0 0;
-  font-family: 'GalaxieCopernicus', sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.4;
-  letter-spacing: -0.18px;
-  color: #3c3c3c;
   max-width: 295px;
 }
 
-@media (min-width: 1680px) {
+@media only screen and (min-width: 1680px) {
   .beneficiaries {
     padding-left: 240px;
   }
 }
 
-@media (max-width: 1680px) {
+@media only screen and (max-width: 1680px) {
   .beneficiaries {
     padding-left: 120px;
   }
-  .beneficiaries .card-wrapper {
-    overflow: scroll hidden;
-  }
 }
 
-@media (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
   .beneficiaries {
     padding-left: 88px;
   }
 }
 
-@media (max-width: 992px) {
+@media only screen and (max-width: 992px) {
   .beneficiaries {
     padding-left: 64px;
   }
 }
 
-@media (max-width: 786px) {
+@media only screen and (max-width: 786px) {
   .beneficiaries {
     padding-left: 48px;
   }
 }
 
-@media (max-width: 576px) {
+@media only screen and (max-width: 576px) {
   .beneficiaries {
     margin-top: 30px;
     padding: 24px 0 24px 32px;
   }
-  .beneficiaries h2 {
-    font-size: 14px;
+  .beneficiaries .card-wrapper {
+    margin-top: 17px;
   }
   .beneficiaries .card-wrapper .card {
     padding: 16px;
@@ -1041,8 +1062,8 @@ header .toggle-btn {
   .beneficiaries .card-wrapper .card figure img {
     min-width: 202px;
   }
-  .beneficiaries .card-wrapper .card figure figcaption {
-    font-size: 14px;
+  .beneficiaries .card-wrapper .card:last-child {
+    padding: 15px 0 15px 15px;
   }
   .beneficiaries .card-wrapper .card:last-child img {
     min-width: 60px;
@@ -1055,11 +1076,13 @@ header .toggle-btn {
   position: relative;
 }
 
+.founder h5 {
+  color: #ffffff;
+}
+
 .founder .founder-text {
   background-color: #d7c3ae;
   padding: 80px 120px 22% 120px;
-  text-transform: uppercase;
-  color: #ffffff;
 }
 
 .founder .founder-img {
@@ -1073,12 +1096,6 @@ header .toggle-btn {
 
 .founder .founder-img figcaption {
   position: absolute;
-  font-family: 'GalaxieCopernicus', sans-serif;
-  font-size: 44px;
-  line-height: 1.2;
-  letter-spacing: -0.88px;
-  text-align: left;
-  color: #fff;
   bottom: 4%;
   width: 100%;
   padding: 60px;
@@ -1096,7 +1113,7 @@ header .toggle-btn {
   display: none;
 }
 
-@media (min-width: 1680px) {
+@media only screen and (min-width: 1680px) {
   .founder .founder-text {
     padding-right: 240px;
     padding-left: 240px;
@@ -1110,7 +1127,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 1680px) {
+@media only screen and (max-width: 1680px) {
   .founder .founder-text {
     padding-right: 120px;
     padding-left: 120px;
@@ -1124,7 +1141,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
   .founder .founder-text {
     padding-right: 88px;
     padding-left: 88px;
@@ -1138,7 +1155,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 992px) {
+@media only screen and (max-width: 992px) {
   .founder .founder-text {
     padding-right: 64px;
     padding-left: 64px;
@@ -1153,7 +1170,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 786px) {
+@media only screen and (max-width: 786px) {
   .founder .founder-text {
     padding-right: 48px;
     padding-left: 48px;
@@ -1167,13 +1184,10 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 576px) {
+@media only screen and (max-width: 576px) {
   .founder .founder-text {
     padding: 32px;
     padding-bottom: 64px;
-  }
-  .founder .founder-text h2 {
-    font-size: 14px;
   }
   .founder .founder-img {
     padding: 0 32px 32px 32px;
@@ -1195,7 +1209,6 @@ header .toggle-btn {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    font-size: 24px;
     padding: 16px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1207,11 +1220,11 @@ header .toggle-btn {
   .founder .founder-img figure figcaption hr {
     display: none;
   }
-  .founder .founder-img figure figcaption div:first-child {
+  .founder .founder-img figure figcaption h2:first-child {
     position: relative;
     top: 120px;
   }
-  .founder .founder-img figure figcaption div span {
+  .founder .founder-img figure figcaption h2 span {
     margin-top: 2px;
     margin-left: 5px;
   }
@@ -1246,11 +1259,6 @@ header .toggle-btn {
 
 .gallery .img-wrapper .card figcaption {
   margin: 12px 0 0;
-  font-family: Inter, sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-  letter-spacing: 0.28px;
-  color: #74788a;
 }
 
 .gallery .img-wrapper .div1 {
@@ -1260,12 +1268,6 @@ header .toggle-btn {
   -ms-grid-column-span: 1;
   grid-area: 1 / 1 / 2 / 2;
   padding-bottom: 60px;
-  font-family: Inter, sans-serif;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 1;
-  letter-spacing: 1.2px;
-  color: #003a92;
 }
 
 .gallery .img-wrapper .div2 {
@@ -1301,28 +1303,28 @@ header .toggle-btn {
   grid-area: 3 / 3 / 4 / 4;
 }
 
-@media (max-width: 1920px) and (min-width: 1680px) {
+@media only screen and (min-width: 1680px) {
   .gallery {
     padding-left: 240px;
     padding-right: 240px;
   }
 }
 
-@media (max-width: 1680px) {
+@media only screen and (max-width: 1680px) {
   .gallery {
     padding-left: 120px;
     padding-right: 120px;
   }
 }
 
-@media (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
   .gallery {
     padding-left: 88px;
     padding-right: 88px;
   }
 }
 
-@media (max-width: 992px) {
+@media only screen and (max-width: 992px) {
   .gallery {
     padding-left: 64px;
     padding-right: 64px;
@@ -1332,7 +1334,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 786px) {
+@media only screen and (max-width: 786px) {
   .gallery {
     padding-left: 48px;
     padding-right: 48px;
@@ -1359,7 +1361,7 @@ header .toggle-btn {
   }
 }
 
-@media (max-width: 576px) {
+@media only screen and (max-width: 576px) {
   .gallery {
     padding: 32px 0 32px 32px;
   }
@@ -1368,9 +1370,6 @@ header .toggle-btn {
   }
   .gallery .img-wrapper .div1 {
     left: 32px;
-  }
-  .gallery .img-wrapper .div1 h2 {
-    font-size: 14px;
   }
   .gallery .img-wrapper .card {
     padding: 16px;
@@ -1425,10 +1424,6 @@ footer .footer-link ul {
 
 footer .footer-link ul li a {
   color: #ffffff;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-  letter-spacing: 0.28px;
 }
 
 footer .footer-link .social-icons {
@@ -1459,43 +1454,33 @@ footer .footer-bottom ul {
   gap: 40px;
 }
 
-footer .footer-bottom ul li a {
-  color: #f2efee;
-  font-weight: 500;
-  opacity: .5;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-  letter-spacing: 0.28px;
-}
-
-footer .footer-bottom .copyright {
+footer .footer-bottom .p2 {
   color: #ffffff;
   opacity: .5;
 }
 
-@media (min-width: 1680px) {
+@media only screen and (min-width: 1680px) {
   footer {
     padding-right: 240px;
     padding-left: 240px;
   }
 }
 
-@media (max-width: 1680px) {
+@media only screen and (max-width: 1680px) {
   footer {
     padding-right: 120px;
     padding-left: 120px;
   }
 }
 
-@media (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
   footer {
     padding-right: 88px;
     padding-left: 88px;
   }
 }
 
-@media (max-width: 992px) {
+@media only screen and (max-width: 992px) {
   footer {
     padding-right: 64px;
     padding-left: 64px;
@@ -1508,7 +1493,7 @@ footer .footer-bottom .copyright {
   }
 }
 
-@media (max-width: 786px) {
+@media only screen and (max-width: 786px) {
   footer {
     padding-right: 48px;
     padding-left: 48px;
@@ -1538,7 +1523,7 @@ footer .footer-bottom .copyright {
   }
 }
 
-@media (max-width: 576px) {
+@media only screen and (max-width: 576px) {
   footer {
     padding: 58px 32px 32px 32px;
   }

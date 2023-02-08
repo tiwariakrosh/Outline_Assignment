@@ -1,55 +1,7 @@
-@font-face {
-    font-family: GalaxieCopernicus;
-    src: url(/fonts/GalaxieCopernicus-Book.otf);
-}
+@import 'global';
+@import './responsive';
 
-@font-face {
-    font-family: Inter;
-    src: url(/fonts/Inter-VariableFont_slnt\,wght.ttf);
-}
-
-$body-color: #f2efee;
-$blue-color : #003a92;
-$black-color: #3c3c3c;
-$white: #ffffff;
-$secondary-color: #74788a;
-$red: #8c2531;
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: $body-color;
-    position: relative;
-    max-width: 1920px;
-    margin: 0 auto;
-}
-
-ul li,
-a {
-    text-decoration: none;
-    list-style: none;
-}
-
-img {
-    max-width: 100%;
-}
-
-@mixin centerDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin betweenDiv {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
+// header 
 header {
     position: relative;
 
@@ -82,7 +34,6 @@ header {
         left: 60px;
         padding: 52px 120px 40px 60px;
 
-
         img {
             width: 150px;
         }
@@ -103,25 +54,38 @@ header {
                 padding: 20px 0;
 
                 a {
-                    font-size: 14px;
-                    font-weight: 400;
                     text-transform: capitalize;
-                    line-height: 20px;
-                    letter-spacing: 2%;
-                    color: $black-color;
-                    font-family: 'Inter', sans-serif;
+                    font-weight: 400;
                 }
 
-                ul {
+                .drop-content {
                     position: absolute;
                     width: 100%;
-                    top: 120px;
+                    top: 115px;
                     background-color: $white;
                     padding: 32px;
                     left: 0;
-                    z-index: 6;
+                    z-index: 4;
                     display: none;
                     padding-left: auto;
+                    border-top: 1px solid #00000035;
+
+                    a {
+                        font-size: 32px;
+                        letter-spacing: -2%;
+                        font-weight: 500;
+                        color: $blue-color;
+                        line-height: 1.2;
+                        max-width: 380px;
+                    }
+                }
+
+                .founder-content {
+                    padding-left: 45%;
+                }
+
+                .scholar-content {
+                    padding-left: 65%;
                 }
             }
         }
@@ -139,10 +103,8 @@ header {
     .toggle-btn {
         display: none;
     }
-}
 
-@media (min-width: 1680px) {
-    header {
+    @include responsive(XL-desktop) {
         .nav-top {
             .social-icons {
                 padding-right: 240px;
@@ -160,10 +122,8 @@ header {
             padding-left: 240px;
         }
     }
-}
 
-@media (max-width: 1680px) {
-    header {
+    @include responsive(M-desktop) {
         .nav-top {
             .social-icons {
                 padding-right: 120px;
@@ -181,10 +141,8 @@ header {
             padding-left: 120px;
         }
     }
-}
 
-@media (max-width: 1200px) {
-    header {
+    @include responsive(desktop) {
         .nav-top {
             .social-icons {
                 padding-right: 88px;
@@ -206,10 +164,8 @@ header {
             padding-left: 88px;
         }
     }
-}
 
-@media (max-width: 992px) {
-    header {
+    @include responsive(tab-land) {
         .nav-top {
             .social-icons {
                 padding-right: 64px;
@@ -232,7 +188,7 @@ header {
                 li {
                     padding: 0;
 
-                    ul {
+                    .drop-content {
                         background-color: transparent;
                         position: relative;
                         top: -10px;
@@ -311,11 +267,11 @@ header {
                 display: block;
             }
         }
-    }
-}
 
-@media (max-width: 786px) {
-    header {
+    }
+
+    @include responsive(tab-port) {
+
         .nav-top {
             .social-icons {
                 padding-right: 48px;
@@ -342,10 +298,8 @@ header {
             }
         }
     }
-}
 
-@media (max-width: 576px) {
-    header {
+    @include responsive(phone) {
         .nav-top {
             height: 56px;
 
@@ -376,6 +330,7 @@ header {
                 width: calc(100% - 64px);
             }
         }
+
     }
 }
 
@@ -394,16 +349,6 @@ header {
         align-items: flex-end;
         padding: 20px 0 40px 0;
 
-        h1 {
-            font-family: 'GalaxieCopernicus', sans-serif;
-            font-weight: 500;
-            font-size: 64px;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            color: $blue-color;
-            width: 70%;
-        }
-
         .button {
             @include betweenDiv();
             width: 20%;
@@ -413,19 +358,15 @@ header {
             width: 214px;
             border-radius: 2px;
             margin-bottom: 24px;
+            text-align: center;
+
+            span {
+                padding: 0 20px;
+            }
 
             img {
                 border-left: 1px solid $secondary-color;
                 padding: 24px;
-            }
-
-            span {
-                padding: 24px;
-                font-family: 'Inter', sans-serif;
-                font-weight: 700;
-                font-size: 1.1rem;
-                line-height: 18px;
-                color: $black-color;
             }
         }
     }
@@ -442,10 +383,8 @@ header {
             height: 100%;
         }
     }
-}
 
-@media (min-width: 1680px) {
-    .hero {
+    @include responsive(XL-desktop) {
         width: calc(100% - 120px);
         left: 120px;
         padding-right: 240px;
@@ -456,10 +395,9 @@ header {
             left: 120px;
         }
     }
-}
 
-@media (max-width: 1680px) {
-    .hero {
+    @include responsive(M-desktop) {
+
         width: calc(100% - 60px);
         left: 60px;
         padding-right: 120px;
@@ -470,10 +408,8 @@ header {
             left: 60px;
         }
     }
-}
 
-@media (max-width: 1200px) {
-    .hero {
+    @include responsive(desktop) {
         width: calc(100% - 44px);
         left: 44px;
         padding-right: 88px;
@@ -484,10 +420,8 @@ header {
             left: 44px;
         }
     }
-}
 
-@media (max-width: 992px) {
-    .hero {
+    @include responsive(tab-land) {
         width: calc(100% - 32px);
         left: 32px;
         padding-right: 64px;
@@ -503,10 +437,8 @@ header {
             height: 390px;
         }
     }
-}
 
-@media (max-width: 786px) {
-    .hero {
+    @include responsive(tab-port) {
         width: calc(100% - 24px);
         left: 24px;
         padding-right: 48px;
@@ -525,13 +457,11 @@ header {
                 width: calc(100% - 24px);
                 left: 24px;
             }
+
         }
     }
-}
 
-
-@media (max-width: 576px) {
-    .hero {
+    @include responsive(phone) {
         width: calc(100% - 16px);
         left: 16px;
         padding: 20px 32px 32px 16px;
@@ -540,25 +470,16 @@ header {
         .hero-text {
             gap: 20px;
 
-            h1 {
-                font-size: 32px;
-                line-height: 1.1;
-                letter-spacing: -2%;
-            }
-
             .button {
-                width: 140px;
+                width: 141px;
                 height: 40px;
 
                 span {
-                    font-size: 14px;
-                    line-height: 1;
-                    letter-spacing: 0.28px;
-                    padding: 10px;
+                    padding: 11px;
                 }
 
                 img {
-                    padding: 12px;
+                    padding: 11px;
                 }
             }
         }
@@ -571,25 +492,18 @@ header {
     }
 }
 
-
-
-// NEWS
+// NEWS Section
 .news {
     display: flex;
     flex-direction: column;
     padding: 60px 120px;
 
-    h2 {
-        font-size: 24px;
-        color: $blue-color;
-        font-family: 'Inter', sans-serif;
-        font-weight: 600;
-        letter-spacing: 1.2px;
-        line-height: 24px;
-    }
-
     .news-container {
         display: flex;
+
+        h2 {
+            color: $black-color;
+        }
 
         img {
             width: 100%;
@@ -603,12 +517,6 @@ header {
             figcaption {
                 flex-grow: 0;
                 margin: 16px 1px 0 0;
-                font-family: GalaxieCopernicus;
-                font-size: 44px;
-                line-height: 1.2;
-                letter-spacing: -0.88px;
-                text-align: left;
-                color: #3c3c3c;
             }
         }
     }
@@ -618,11 +526,6 @@ header {
         display: flex;
         gap: 40px;
         margin: 14px 0;
-        color: $secondary-color;
-        font-family: Inter;
-        font-size: 14px;
-        font-weight: 600;
-        letter-spacing: 0.7px;
     }
 
     .grid-news {
@@ -633,40 +536,18 @@ header {
         .card {
             padding: 40px;
             border: 1px solid $white;
-
-            figcaption {
-                font-family: GalaxieCopernicus;
-                letter-spacing: -0.64px;
-                text-align: left;
-                color: $black-color;
-            }
         }
 
         .div1 {
             grid-area: 1 / 1 / 2 / 3;
-
-            figcaption {
-                font-size: 32px;
-                line-height: 1.2;
-            }
         }
 
         .div2 {
             grid-area: 2 / 1 / 3 / 2;
-
-            figcaption {
-                font-size: 1.1rem;
-                line-height: 1.4;
-            }
         }
 
         .div3 {
             grid-area: 2 / 2 / 3 / 3;
-
-            figcaption {
-                font-size: 1.1rem;
-                line-height: 1.4;
-            }
         }
 
     }
@@ -679,36 +560,22 @@ header {
         width: max-content;
         margin-top: 20px;
 
-        a {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 0.36px;
-            color: $black-color;
-        }
-
         img {
             margin-top: 4px;
         }
     }
-}
 
-@media (min-width: 1680px) {
-    .news {
+    @include responsive(XL-desktop) {
         padding-right: 240px;
         padding-left: 240px;
     }
-}
 
-@media (max-width: 1680px) {
-    .news {
+    @include responsive(M-desktop) {
         padding-right: 120px;
         padding-left: 120px;
     }
-}
 
-@media (max-width: 1200px) {
-    .news {
+    @include responsive(desktop) {
         padding-right: 88px;
         padding-left: 88px;
 
@@ -719,10 +586,7 @@ header {
         }
     }
 
-}
-
-@media (max-width: 992px) {
-    .news {
+    @include responsive(tab-land) {
         padding-right: 64px;
         padding-left: 64px;
 
@@ -730,17 +594,13 @@ header {
             flex-direction: column;
         }
     }
-}
 
-@media (max-width: 786px) {
-    .news {
+    @include responsive(tab-port) {
         padding-right: 48px;
         padding-left: 48px;
     }
-}
 
-@media (max-width: 576px) {
-    .news {
+    @include responsive(phone) {
         padding: 16px 0 16px 32px;
         flex-direction: column;
 
@@ -780,39 +640,27 @@ header {
     }
 }
 
-
 // mission section
 .mission {
     padding: 60px 60px 60px 0;
     position: relative;
     margin-bottom: 280px;
 
+    h5 {
+        color: $white;
+    }
+
     .mission-text {
         background-color: $red;
         padding: 60px 120px 26% 120px;
         color: $white;
-        font-family: 'GalaxieCopernicus', sans-serif;
-        line-height: 1.2;
-        letter-spacing: -0.88px;
-
-        span {
-            text-transform: uppercase;
-            font-family: 'Inter', sans-serif;
-            line-height: 1;
-            font-weight: 600;
-            letter-spacing: 1.2px;
-            font-size: 24px;
-        }
 
         h2 {
             max-width: 780px;
             margin: 32px 0 20px;
-            font-size: 44px;
         }
 
         p {
-            line-height: 1.4;
-            font-size: 1.1rem;
             max-width: 780px;
             opacity: .8;
         }
@@ -830,10 +678,8 @@ header {
             width: 100%;
         }
     }
-}
 
-@media (min-width: 1680px) {
-    .mission {
+    @include responsive(XL-desktop) {
         padding-right: 120px;
 
         .mission-text {
@@ -846,10 +692,8 @@ header {
             padding-right: 120px;
         }
     }
-}
 
-@media (max-width: 1680px) {
-    .mission {
+    @include responsive(M-desktop) {
         padding-right: 60px;
 
         .mission-text {
@@ -861,10 +705,8 @@ header {
             }
         }
     }
-}
 
-@media (max-width: 1200px) {
-    .mission {
+    @include responsive(desktop) {
         padding-right: 44px;
 
         .mission-text {
@@ -882,10 +724,7 @@ header {
         }
     }
 
-}
-
-@media (max-width: 992px) {
-    .mission {
+    @include responsive(tab-land) {
         padding-right: 32px;
         margin-bottom: 240px;
 
@@ -904,10 +743,8 @@ header {
             padding-right: 32px;
         }
     }
-}
 
-@media (max-width: 786px) {
-    .mission {
+    @include responsive(tab-port) {
         padding-right: 24px;
         margin-bottom: 200px;
 
@@ -922,10 +759,7 @@ header {
         }
     }
 
-}
-
-@media (max-width: 576px) {
-    .mission {
+    @include responsive(phone) {
         padding: 16px 16px 16px 0;
         position: relative;
         margin-bottom: 150px;
@@ -955,9 +789,10 @@ header {
                 object-fit: cover;
             }
         }
-    }
 
+    }
 }
+
 
 // beneficiaries section
 
@@ -965,19 +800,11 @@ header {
     padding: 80px 0 80px 120px;
     background-color: $white;
 
-    h2 {
-        text-transform: uppercase;
-        font-family: Inter, sans-serif;
-        font-size: 24px;
-        font-weight: 700;
-        letter-spacing: 1.2px;
-        color: $blue-color;
-        margin-bottom: 30px;
-    }
-
     .card-wrapper {
-        display: flex;
-        justify-content: space-between;
+        @include betweenDiv();
+        overflow: scroll hidden;
+        align-items: flex-start;
+        margin-top: 30px;
 
         .card {
             height: 497px;
@@ -1012,61 +839,38 @@ header {
 
             figcaption {
                 margin: 20px 0 0;
-                font-family: 'GalaxieCopernicus', sans-serif;
-                font-size: 1.1rem;
-                line-height: 1.4;
-                letter-spacing: -0.18px;
-                color: $black-color;
                 max-width: 295px;
             }
         }
     }
-}
 
-@media (min-width: 1680px) {
-    .beneficiaries {
+    @include responsive(XL-desktop) {
         padding-left: 240px;
     }
-}
 
-@media (max-width: 1680px) {
-    .beneficiaries {
+    @include responsive(M-desktop) {
         padding-left: 120px;
-
-        .card-wrapper {
-            overflow: scroll hidden;
-        }
     }
-}
 
-@media (max-width: 1200px) {
-    .beneficiaries {
+    @include responsive(desktop) {
         padding-left: 88px;
     }
-}
 
-@media (max-width: 992px) {
-    .beneficiaries {
+    @include responsive(tab-land) {
         padding-left: 64px;
     }
-}
 
-@media (max-width: 786px) {
-    .beneficiaries {
+    @include responsive(tab-port) {
         padding-left: 48px;
     }
-}
 
-@media (max-width: 576px) {
-    .beneficiaries {
+    @include responsive(phone) {
         margin-top: 30px;
         padding: 24px 0 24px 32px;
 
-        h2 {
-            font-size: 14px;
-        }
-
         .card-wrapper {
+            margin-top: 17px;
+
             .card {
                 padding: 16px;
                 height: auto;
@@ -1075,16 +879,16 @@ header {
                     img {
                         min-width: 202px;
                     }
+                }
 
-                    figcaption {
-                        font-size: 14px;
+                &:last-child {
+                    padding: 15px 0 15px 15px;
+
+                    img {
+                        min-width: 60px;
+                        height: 360px;
                     }
                 }
-            }
-
-            .card:last-child img {
-                min-width: 60px;
-                height: 360px;
             }
         }
     }
@@ -1095,11 +899,13 @@ header {
     background-color: $white;
     position: relative;
 
+    h5 {
+        color: $white;
+    }
+
     .founder-text {
         background-color: #d7c3ae;
         padding: 80px 120px 22% 120px;
-        text-transform: uppercase;
-        color: $white;
     }
 
     .founder-img {
@@ -1112,12 +918,6 @@ header {
 
         figcaption {
             position: absolute;
-            font-family: 'GalaxieCopernicus', sans-serif;
-            font-size: 44px;
-            line-height: 1.2;
-            letter-spacing: -0.88px;
-            text-align: left;
-            color: #fff;
             bottom: 4%;
             width: 100%;
             padding: 60px;
@@ -1135,10 +935,8 @@ header {
             display: none;
         }
     }
-}
 
-@media (min-width: 1680px) {
-    .founder {
+    @include responsive(XL-desktop) {
         .founder-text {
             padding-right: 240px;
             padding-left: 240px;
@@ -1153,10 +951,8 @@ header {
             }
         }
     }
-}
 
-@media (max-width: 1680px) {
-    .founder {
+    @include responsive(M-desktop) {
         .founder-text {
             padding-right: 120px;
             padding-left: 120px;
@@ -1173,11 +969,7 @@ header {
         }
     }
 
-
-}
-
-@media (max-width: 1200px) {
-    .founder {
+    @include responsive(desktop) {
         .founder-text {
             padding-right: 88px;
             padding-left: 88px;
@@ -1192,10 +984,8 @@ header {
             }
         }
     }
-}
 
-@media (max-width: 992px) {
-    .founder {
+    @include responsive(tab-land) {
         .founder-text {
             padding-right: 64px;
             padding-left: 64px;
@@ -1211,10 +1001,8 @@ header {
             }
         }
     }
-}
 
-@media (max-width: 786px) {
-    .founder {
+    @include responsive(tab-port) {
         .founder-text {
             padding-right: 48px;
             padding-left: 48px;
@@ -1229,17 +1017,11 @@ header {
             }
         }
     }
-}
 
-@media (max-width: 576px) {
-    .founder {
+    @include responsive(phone) {
         .founder-text {
             padding: 32px;
             padding-bottom: 64px;
-
-            h2 {
-                font-size: 14px;
-            }
         }
 
         .founder-img {
@@ -1255,7 +1037,6 @@ header {
 
                 figcaption {
                     @include betweenDiv();
-                    font-size: 24px;
                     padding: 16px;
                     flex-direction: column;
                     height: 100%;
@@ -1265,7 +1046,7 @@ header {
                         display: none;
                     }
 
-                    div {
+                    h2 {
                         &:first-child {
                             position: relative;
                             top: 120px;
@@ -1307,23 +1088,12 @@ header {
 
             figcaption {
                 margin: 12px 0 0;
-                font-family: Inter, sans-serif;
-                font-size: 14px;
-                line-height: 1.4;
-                letter-spacing: 0.28px;
-                color: $secondary-color;
             }
         }
 
         .div1 {
             grid-area: 1 / 1 / 2 / 2;
             padding-bottom: 60px;
-            font-family: Inter, sans-serif;
-            font-size: 24px;
-            font-weight: bold;
-            line-height: 1;
-            letter-spacing: 1.2px;
-            color: $blue-color;
         }
 
         .div2 {
@@ -1343,31 +1113,23 @@ header {
             grid-area: 3 / 3 / 4 / 4;
         }
     }
-}
 
-@media (max-width: 1920px) and (min-width: 1680px) {
-    .gallery {
+    @include responsive(XL-desktop) {
         padding-left: 240px;
         padding-right: 240px;
     }
-}
 
-@media (max-width: 1680px) {
-    .gallery {
+    @include responsive(M-desktop) {
         padding-left: 120px;
         padding-right: 120px;
     }
-}
 
-@media (max-width: 1200px) {
-    .gallery {
+    @include responsive(desktop) {
         padding-left: 88px;
         padding-right: 88px;
     }
-}
 
-@media (max-width: 992px) {
-    .gallery {
+    @include responsive(tab-land) {
         padding-left: 64px;
         padding-right: 64px;
 
@@ -1377,10 +1139,8 @@ header {
             }
         }
     }
-}
 
-@media (max-width: 786px) {
-    .gallery {
+    @include responsive(tab-port) {
         padding-left: 48px;
         padding-right: 48px;
         position: relative;
@@ -1404,10 +1164,7 @@ header {
         }
     }
 
-}
-
-@media (max-width: 576px) {
-    .gallery {
+    @include responsive(phone) {
         padding: 32px 0 32px 32px;
 
         .img-wrapper {
@@ -1415,10 +1172,6 @@ header {
 
             .div1 {
                 left: 32px;
-
-                h2 {
-                    font-size: 14px;
-                }
             }
 
             .card {
@@ -1445,9 +1198,7 @@ footer {
     }
 
     .footer-link {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include betweenDiv();
         margin: 20px 0;
         padding-bottom: 50px;
 
@@ -1463,10 +1214,6 @@ footer {
 
             li a {
                 color: $white;
-                font-family: 'Inter', sans-serif;
-                font-size: 14px;
-                line-height: 1.4;
-                letter-spacing: 0.28px;
             }
         }
 
@@ -1478,9 +1225,7 @@ footer {
 
 
     .footer-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include betweenDiv();
         margin-top: 80px;
         margin-bottom: 10px;
 
@@ -1488,48 +1233,30 @@ footer {
             display: flex;
             gap: 40px;
 
-            li a {
-                color: $body-color;
-                font-weight: 500;
-                opacity: .5;
-                font-family: 'Inter', sans-serif;
-                font-size: 14px;
-                line-height: 1.4;
-                letter-spacing: 0.28px;
-            }
         }
 
-        .copyright {
+        .p2 {
             color: $white;
             opacity: .5;
         }
     }
-}
 
-@media (min-width: 1680px) {
-    footer {
+    @include responsive(XL-desktop) {
         padding-right: 240px;
         padding-left: 240px;
     }
-}
 
-@media (max-width: 1680px) {
-    footer {
+    @include responsive(M-desktop) {
         padding-right: 120px;
         padding-left: 120px;
     }
-}
 
-@media (max-width: 1200px) {
-    footer {
+    @include responsive(desktop) {
         padding-right: 88px;
         padding-left: 88px;
     }
 
-}
-
-@media (max-width: 992px) {
-    footer {
+    @include responsive(tab-land) {
         padding-right: 64px;
         padding-left: 64px;
 
@@ -1543,10 +1270,8 @@ footer {
             }
         }
     }
-}
 
-@media (max-width: 786px) {
-    footer {
+    @include responsive(tab-port) {
         padding-right: 48px;
         padding-left: 48px;
         position: relative;
@@ -1574,10 +1299,8 @@ footer {
             }
         }
     }
-}
 
-@media (max-width: 576px) {
-    footer {
+    @include responsive(phone) {
         padding: 58px 32px 32px 32px;
 
         .footer-link {

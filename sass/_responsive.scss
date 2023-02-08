@@ -1,0 +1,37 @@
+@mixin responsive($breakpoint) {
+    @if $breakpoint ==phone {
+        @media only screen and (max-width: 576px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==tab-port {
+        @media only screen and (max-width: 786px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==tab-land {
+        @media only screen and (max-width: 992px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==desktop {
+        @media only screen and (max-width: 1200px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==M-desktop {
+        @media only screen and (max-width: 1680px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==XL-desktop {
+        @media only screen and (min-width: 1680px) {
+            @content;
+        }
+    }
+}

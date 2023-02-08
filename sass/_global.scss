@@ -1,0 +1,156 @@
+@font-face {
+    font-family: GalaxieCopernicus;
+    src: url(/fonts/GalaxieCopernicus-Book.otf);
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+$body-color: #f2efee;
+$blue-color : #003a92;
+$black-color: #3c3c3c;
+$white: #ffffff;
+$secondary-color: #74788a;
+$red: #8c2531;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $body-color;
+    position: relative;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+ul li,
+a {
+    text-decoration: none;
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+@mixin centerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin betweenDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'GalaxieCopernicus', sans-serif;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: $blue-color;
+    width: 70%;
+}
+
+h2 {
+    font-family: 'GalaxieCopernicus', sans-serif;
+    font-size: 44px;
+    line-height: 1.2;
+    letter-spacing: -0.88px;
+    font-weight: 500;
+    color: $white;
+}
+
+h3 {
+    font-size: 2rem;
+    line-height: 1.2;
+    font-family: 'GalaxieCopernicus', sans-serif;
+    letter-spacing: -0.64px;
+    font-weight: 500;
+}
+
+h5 {
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 5%;
+    font-size: 24px;
+    color: $blue-color;
+}
+
+h6 {
+    color: $secondary-color;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+}
+
+.p1 {
+    font-family: 'GalaxieCopernicus', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    font-weight: normal;
+}
+
+.p2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 0.28px;
+    color: #74788a;
+    font-weight: 500;
+}
+
+.b1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: -2%;
+    color: $black-color;
+}
+
+// mobile responsive
+@media (max-width: 576px) {
+    h1 {
+        font-size: 32px;
+        line-height: 1.1;
+        letter-spacing: -2%;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    h5 {
+        font-size: 14px;
+    }
+
+    h6 {
+        font-size: 10px;
+    }
+
+    .p1 {
+        font-size: 14px;
+    }
+
+    .p2 {
+        font-size: 12px;
+    }
+
+    .b1 {
+        font-size: 14px;
+    }
+}
