@@ -23,11 +23,11 @@ toggleBtn.addEventListener("click", function () {
 // dropdown Js
 $('.dropdown').click(function () {
     $(this).find('.drop-content').fadeToggle('fast');
-    $(this).find('a').toggleClass('active');
+    $(this).find('.dropdown-link').toggleClass('active');
 });
 
 
 $(".dropdown").mouseleave(function () {
     $('.drop-content').fadeOut('fast');
-    $('a').removeClass('active');
+    $('.dropdown-link').removeClass('active');
 });
