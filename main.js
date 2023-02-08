@@ -1,3 +1,4 @@
+// sticky navbar 
 window.onscroll = function () { myFunction() };
 
 var navbar = document.getElementById("navbar");
@@ -11,9 +12,22 @@ function myFunction() {
     }
 }
 
+// responsive toogle navbar
 const toggleBtn = document.querySelector(".toggle-btn");
 const navbar1 = document.querySelector("#navbar");
 
 toggleBtn.addEventListener("click", function () {
     navbar1.classList.toggle("active");
+});
+
+// dropdown Js
+$('.dropdown').click(function () {
+    $(this).find('.drop-content').fadeToggle('fast');
+    $(this).find('a').toggleClass('active');
+});
+
+
+$(".dropdown").mouseleave(function () {
+    $('.drop-content').fadeOut('fast');
+    $('a').removeClass('active');
 });
