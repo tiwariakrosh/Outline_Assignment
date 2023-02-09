@@ -24,10 +24,13 @@ toggleBtn.addEventListener("click", function () {
 $('.dropdown').click(function () {
     $(this).find('.drop-content').fadeToggle('fast');
     $(this).find('.dropdown-link').toggleClass('active');
+    $('body').toggleClass('shadow');
+    $('.navbar').toggleClass('bg_white');
 });
 
-
-// $(".dropdown").mouseleave(function () {
-//     $('.drop-content').fadeOut('fast');
-//     $('.dropdown-link').removeClass('active');
-// });
+$(".dropdown").mouseleave(function () {
+    $('.drop-content').fadeOut('fast');
+    $('.dropdown-link').removeClass('active');
+    $('body').removeClass('shadow');
+    $('.navbar').removeClass('bg_white');
+});

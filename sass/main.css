@@ -22,6 +22,18 @@ body {
   margin: 0 auto;
 }
 
+.shadow::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  content: '';
+  background-color: #74788a;
+  opacity: 0.8;
+  z-index: 5;
+}
+
 ul li,
 a {
   text-decoration: none;
@@ -131,6 +143,7 @@ h6 {
 
 header {
   position: relative;
+  z-index: 10;
 }
 
 header .nav-top {
@@ -139,6 +152,7 @@ header .nav-top {
   height: 60px;
   left: 0px;
   top: 0px;
+  background-color: #f2efee;
 }
 
 header .nav-top .social-icons {
@@ -202,7 +216,7 @@ header .navbar .nav-items .active {
 }
 
 header .navbar .nav-items li {
-  padding: 20px 0;
+  padding: 14px 0;
 }
 
 header .navbar .nav-items li a {
@@ -212,15 +226,29 @@ header .navbar .nav-items li a {
 
 header .navbar .nav-items li .drop-content {
   position: absolute;
-  width: 100%;
-  top: 115px;
-  background-color: #ffffff;
-  padding: 32px;
-  left: 0;
-  z-index: 4;
+  z-index: 7;
+  top: 100px;
   display: none;
-  padding-left: auto;
-  border-top: 1px solid #00000035;
+  padding-top: 50px;
+}
+
+header .navbar .nav-items li .drop-content li {
+  padding: 30px 0;
+}
+
+header .navbar .nav-items li .drop-content .f_link {
+  position: relative;
+  max-width: 350px;
+}
+
+header .navbar .nav-items li .drop-content .f_link::before {
+  position: absolute;
+  left: 0;
+  height: 1px;
+  bottom: 0;
+  content: '';
+  width: 80px;
+  background-color: #C4C4C4;
 }
 
 header .navbar .nav-items li .drop-content a {
@@ -230,22 +258,28 @@ header .navbar .nav-items li .drop-content a {
   color: #003a92;
   line-height: 1.2;
   max-width: 380px;
+  position: relative;
 }
 
-header .navbar .nav-items li .founder-content {
-  padding-left: 45%;
-}
-
-header .navbar .nav-items li .scholar-content {
-  padding-left: 65%;
+header .navbar.bg_white::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+  top: 130px;
+  z-index: 6;
+  padding: 30px;
+  border-top: 1px solid #c4c4c4;
 }
 
 header .navbar.sticky {
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 5;
   width: 100%;
-  left: 0;
   padding-left: 120px;
 }
 
@@ -329,10 +363,28 @@ header .toggle-btn {
     top: -10px;
     padding: 0;
   }
+  header .navbar .nav-items li .drop-content li {
+    padding: 0;
+  }
+  header .navbar .nav-items li .drop-content .f_link::before {
+    display: none;
+  }
+  header .navbar .nav-items li .drop-content a {
+    all: unset;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    border-top: 0px solid #ffffff;
+    padding: 12px 16px 12px 28px;
+    display: block;
+  }
   header .navbar .nav-items .active {
     color: #ffffff35;
   }
   header .navbar .close-icon {
+    display: none;
+  }
+  header .navbar.bg_white::after {
     display: none;
   }
   header .navbar.sticky {
@@ -360,10 +412,6 @@ header .toggle-btn {
   header .active .nav-items ul {
     margin-bottom: 8px;
   }
-  header .active .nav-items ul li a {
-    border-top: 0px solid #fff;
-    padding: 0 16px 12px 28px;
-  }
   header .toggle-btn {
     display: block;
     z-index: 10;
@@ -387,7 +435,12 @@ header .toggle-btn {
     display: block;
   }
   header .navbar.active .close-icon {
+    margin-top: 5px;
     display: block;
+    height: 24px;
+  }
+  header .navbar.active .burger-icon {
+    display: none;
   }
 }
 
@@ -423,7 +476,7 @@ header .toggle-btn {
   header .navbar {
     width: calc(100% - 16px);
     left: 16px;
-    padding: 36px 32px 36px 16px;
+    padding: 35px 32px 34px 16px;
   }
   header .navbar .logo img {
     width: 105px;
@@ -445,7 +498,7 @@ header .toggle-btn {
   background-color: #ffffff;
   width: calc(100% - 60px);
   left: 60px;
-  padding: 50px 120px 50px 60px;
+  padding: 40px 120px 50px 60px;
   margin-bottom: 280px;
   padding-bottom: 25%;
 }
@@ -463,7 +516,6 @@ header .toggle-btn {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  padding: 20px 0 40px 0;
 }
 
 .hero .hero-text .button {
@@ -500,6 +552,7 @@ header .toggle-btn {
   width: calc(100% - 120px);
   left: 120px;
   right: 0;
+  top: 330px;
   height: 565px;
 }
 
@@ -600,6 +653,9 @@ header .toggle-btn {
   .hero .hero-text {
     gap: 20px;
   }
+  .hero .hero-text h1 {
+    font-size: 32px;
+  }
   .hero .hero-text .button {
     width: 141px;
     height: 40px;
@@ -614,6 +670,7 @@ header .toggle-btn {
     width: calc(100% - 16px);
     left: 16px;
     height: 190px;
+    top: auto;
   }
 }
 
@@ -626,6 +683,10 @@ header .toggle-btn {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 60px 120px;
+}
+
+.news h5 {
+  padding-top: 30px;
 }
 
 .news .news-container {
@@ -769,6 +830,9 @@ header .toggle-btn {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .news h5 {
+    padding-top: 0;
   }
   .news .news-container {
     -webkit-box-orient: horizontal;
@@ -930,7 +994,7 @@ header .toggle-btn {
     margin-bottom: 150px;
   }
   .mission .mission-text {
-    padding: 16px 32px 26% 32px;
+    padding: 40px 32px 26% 32px;
   }
   .mission .mission-text h2 {
     font-size: 24px;
@@ -943,7 +1007,7 @@ header .toggle-btn {
   .mission .mission-image {
     width: calc(100% - 16px);
     padding-right: 16px;
-    top: 380px;
+    top: 350px;
   }
   .mission .mission-image img {
     height: 192px;
@@ -1059,13 +1123,22 @@ header .toggle-btn {
     padding: 16px;
     height: auto;
   }
+  .beneficiaries .card-wrapper .card figure {
+    min-width: auto;
+  }
   .beneficiaries .card-wrapper .card figure img {
     min-width: 202px;
+    height: auto;
   }
   .beneficiaries .card-wrapper .card:last-child {
     padding: 15px 0 15px 15px;
   }
-  .beneficiaries .card-wrapper .card:last-child img {
+  .beneficiaries .card-wrapper .card:last-child figure {
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+  }
+  .beneficiaries .card-wrapper .card:last-child figure img {
     min-width: 60px;
     height: 360px;
   }
@@ -1186,12 +1259,12 @@ header .toggle-btn {
 
 @media only screen and (max-width: 576px) {
   .founder .founder-text {
-    padding: 32px;
-    padding-bottom: 64px;
+    padding: 40px 32px;
+    padding-bottom: 70px;
   }
   .founder .founder-img {
     padding: 0 32px 32px 32px;
-    margin-top: -40px;
+    margin-top: -45px;
   }
   .founder .founder-img figure img {
     height: 175px;

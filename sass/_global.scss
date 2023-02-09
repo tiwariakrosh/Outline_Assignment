@@ -28,6 +28,20 @@ body {
     margin: 0 auto;
 }
 
+.shadow {
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        content: '';
+        background-color: $secondary-color;
+        opacity: 0.8;
+        z-index: 5;
+    }
+}
+
 ul li,
 a {
     text-decoration: none;
